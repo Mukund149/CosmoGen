@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoGen Students Society</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="gndu.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+  /* Import Bold Montserrat Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap');
+
+/* Global Variables */
+:root {
+    --primary-color: #0a192f;  /* Dark Blue */
+    --secondary-color: #00bfff; /* Neon Blue */
+    --text-color: #ffffff; /* White */
+    --bg-color: #000000; /* Black */
+    --card-bg: #121212; /* Dark Grey */
+    --shadow: 0 4px 6px rgba(0,0,0,0.4);
+    --transition: all 0.3s ease-in-out;
+    --font-family: 'Montserrat', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* overflow: hidden; */
+    font-family: var(--font-family);
+    background: var(--text-color);
+    color: var(--bg-color);
+    /* padding-top: 100px; */
+}
+
+/* HomePage */
+
+.home-page{
+    /* box-shadow: inset 0 0 10px white; */
+
+    position: relative;
+    color: var(--bg-color);
+    /* border: 2px solid black; */
+    /* width: 100%; */
+    height: 100vh;
+    cursor: default;
+    overflow-x: hidden;
+}
+.intro-tag{
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(45deg, var(--primary-color) , var(--secondary-color)) border-box;
+    padding: 10px;
+
+    width: 150px;
+}
+.btn{
+    font-family: var(--font-family);
+    margin: 20px 0px;
+    /* border: 2px solid white; */
+    color:black;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn a{
+    font-family: var(--font-family);
+    text-decoration: none;
+    margin: 20px 0px;
+    /* border: 2px solid white; */
+    color:black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.robot{
+    /* border: 2px solid white; */
+    position: absolute;
+    z-index: 0;
+    width: 150%;
+    /* left: 9%; */
+    transform: translateX(-17%);
+}
+
+.home-page .title-home{
+    /* border: 2px solid wheat; */
+    /* width: 90vw; */
+    margin: auto;
+    opacity: 0;
+    filter: blur(10px);
+    transition: 1s;
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: showUp 0.7s ease-in-out 1.5s forwards;
+}
+
+.title-home h1{
+    font-size: 8rem;
+    /* margin-bottom: 20px; */
+}
+.layer-blur{
+    height: 10;
+    width: 50rem;
+    position: absolute;
+    bottom: 50%;
+    /* left: 7vw; */
+    box-shadow: 0 0 60px 10px black;
+}
+.title-home p{
+    /* position: absolute;
+    bottom: 0;
+    right: 10px; */
+    font-size: 40px;
+}
+
+@keyframes showUp {
+    from{
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+/* Navbar */
+header {
+    /* border: 2px solid wheat; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 50px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* box-shadow: var(--shadow); */
+    font-weight: 700;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--bg-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Card Design */
+.card {
+    border: 2px solid white;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 191, 255, 0.5);
+}
+.card:hover img{
+    transition: transform 1s;
+    transform: translateY(-100px) scale(130%);
+    opacity: 0.9;
+}
+
+.card img {
+    transition: 1s;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 80%;
+    }
+}
+
+/* ===== Mobile-First Improvements ===== */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .home-page {
+    color: black;
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title-home h1 {
+    font-size: 3.5rem !important; /* Drastic reduction for mobile */
+    line-height: 1.2;
+  }
+
+  .title-home p {
+    font-size: 1.5rem !important;
+  }
+
+  .robot {
+    width: 100%;
+    transform: translateX(0);
+    position: relative;
+    margin-top: 80px; /* Space below fixed header */
+  }
+
+  /* Navbar */
+  header {
+    padding: 15px 20px !important;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  /* Cards */
+  .card:hover img {
+    transform: none !important; /* Disable hover zoom on mobile */
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 90% !important;
+  }
+}
+
+/* ===== Smaller Mobile Screens (e.g., iPhone SE) ===== */
+@media (max-width: 480px) {
+  /* Navbar */
+  nav ul {
+    display: none; /* Hide nav items */
+  }
+
+  /* Hamburger menu (simplified) */
+  header::before {
+    content: "☰";
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Hero Text */
+  .title-home h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .title-home {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin-top: 40px;
+  }
+}
+
+/* ===== Tablet Adjustments ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .title-home h1 {
+    font-size: 5rem !important;
+  }
+
+  .robot {
+    width: 120%;
+  }
+}
+    </style>
+    
+    
+</head>
+<body>
+    <header>
+        <div class="logo">CosmoGen</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#founder-message">Founder</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#advisors">Advisors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="home-page">
+        <!-- <spline-viewer url="https://prod.spline.design/D8MN0DYdkmT-Egpx/scene.splinecode" class="robot"></spline-viewer> -->
+
+        <spline-viewer url="https://prod.spline.design/TVIcm8LM62S71fE2/scene.splinecode" class="robot"></spline-viewer>
+        <!-- <spline-viewer url="https://prod.spline.design/oh3XALW3EHhwmCvs/scene.splinecode" class="robot" ></spline-viewer> -->
+        <div class="title-home">
+            <h1>CosmoGen</h1>
+            <div class="layer-blur"></div>
+            <div class="right"></div>
+            <p>The only STEM based society</p>
+            <div class="under-right">
+                <button class="intro-tag btn"><a href="homePage.html">Get Started</a></button>
+            </div>
+            
+        </div>
+    </div>
+    
+    </script>
+    <!-- 3d model -->
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</body>
+</html>
+
+
